@@ -1,0 +1,28 @@
+{
+  "name": "l4nding",
+  "version": "1.0.0",
+  "description": "Daniel's landing page",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier -write",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Daniel Jaramillo<d4niel.djm@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.12",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^5.2.1",
+    "next": "^12.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.3",
+    "prettier": "^2.4.1"
+  }
+}
