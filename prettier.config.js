@@ -3,9 +3,9 @@ const options = {
   singleQuote: true,
   bracketSpacing: true,
   endOfLine: 'lf',
-  semi: false,
+  semi: true,
   tabWidth: 2,
-  trailingComma: 'none'
+  trailingComma: 'none',
 }
 
 module.exports = options
