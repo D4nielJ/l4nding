@@ -12,8 +12,8 @@ const l4nding = () => {
   return (
     <VStack minH='100vh' pt={12} textAlign='center'>
       <Box>
-        <Heading>Hello world</Heading>
-        <Text>I&apos;m a Web Developer</Text>
+        <Heading as="h1" size="lg">DANIEL J</Heading>
+        <Text fontWeight="light">I&apos;m a Web Developer</Text>
       </Box>
       <Box>
         {/* Image */}
