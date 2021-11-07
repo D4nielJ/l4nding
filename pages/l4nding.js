@@ -1,5 +1,12 @@
 import { Heading, HStack, Link, VStack } from '@chakra-ui/layout';
 import { Box, Text } from '@chakra-ui/react';
+import Icon from '@chakra-ui/icon';
+import { HiOutlineMail } from 'react-icons/hi';
+import {
+  RiLinkedinBoxLine,
+  RiTwitterLine,
+  RiTelegramLine,
+} from 'react-icons/ri';
 
 const l4nding = () => {
   return (
@@ -12,13 +19,17 @@ const l4nding = () => {
         {/* Image */}
         {/* Background */}
       </Box>
+      <Text>We can build cool stuff, together.</Text>
       <VStack>
         <Link>Website</Link>
         <Link>Resume</Link>
-        <Link>GutHub</Link>
+        <Link>GitHub</Link>
       </VStack>
       <HStack>
-        
+        <Icon as={HiOutlineMail}></Icon>
+        <Icon as={RiLinkedinBoxLine}></Icon>
+        <Icon as={RiTwitterLine}></Icon>
+        <Icon as={RiTelegramLine}></Icon>
       </HStack>
     </VStack>
   );
