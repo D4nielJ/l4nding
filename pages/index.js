@@ -31,8 +31,8 @@ const l4nding = () => {
       py={{ base: 12, md: 20 }}
       px={{ base: 12, md: 0 }}
       textAlign='center'
-      justifyContent={{ base: 'space-between', md: 'center' }}
-      spacing={{ base: 4, md: 20 }}
+      justifyContent={{ base: 'center', md: 'center' }}
+      spacing={{ base: 12, md: 20 }}
     >
       <Stack
         spacing={12}
@@ -40,7 +40,7 @@ const l4nding = () => {
         textAlign={{ base: 'center', md: 'left' }}
         alignItems={{ base: 'initial', md: 'center' }}
       >
-        <Box position='relative'>
+        <Box position='relative' top={{base: 0, md: 8}}>
           <Heading
             as='h1'
             fontSize={{ base: 'xl', md: '3xl' }}
@@ -89,8 +89,9 @@ const l4nding = () => {
         fontSize={{ base: '3xl', md: '5xl' }}
         letterSpacing='tighter'
         lineHeight='shorter'
+        maxW="20ch"
       >
-        We can build cool stuff, together.
+        We can build awesome stuff, together.
       </Text>
 
       <VStack spacing={8}>
