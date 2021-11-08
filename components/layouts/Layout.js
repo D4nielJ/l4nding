@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
         <meta name='twitter:image' content='/card.png' />
         <meta property='og:site_name' content="D4nielJ's l4nding" />
         <meta property='og:type' content='website' />
+        <meta property='og:title' content="D4nielj's l4nding" />
         <title>D4nielJ&apos;s l4nding</title>
       </Head>
       <Container>{children}</Container>
