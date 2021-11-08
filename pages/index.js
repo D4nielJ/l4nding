@@ -40,7 +40,7 @@ const l4nding = () => {
         textAlign={{ base: 'center', md: 'left' }}
         alignItems={{ base: 'initial', md: 'center' }}
       >
-        <Box position='relative' top={{base: 0, md: 8}}>
+        <Box position='relative' top={{ base: 0, md: 8 }}>
           <Heading
             as='h1'
             fontSize={{ base: 'xl', md: '3xl' }}
@@ -89,7 +89,7 @@ const l4nding = () => {
         fontSize={{ base: '3xl', md: '5xl' }}
         letterSpacing='tighter'
         lineHeight='shorter'
-        maxW="20ch"
+        maxW='20ch'
       >
         We can build awesome stuff, together.
       </Text>
