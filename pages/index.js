@@ -28,10 +28,11 @@ const l4nding = () => {
   return (
     <VStack
       minH='100vh'
-      p={{ base: 12, md: 20 }}
+      py={{ base: 12, md: 20 }}
+      px={{ base: 12, md: 0 }}
       textAlign='center'
       justifyContent={{ base: 'space-between', md: 'center' }}
-      spacing={{ base: 12, md: 20 }}
+      spacing={{ base: 4, md: 20 }}
     >
       <Stack
         spacing={12}
@@ -95,8 +96,9 @@ const l4nding = () => {
       <VStack spacing={8}>
         <Stack
           align='stretch'
+          width='full'
           px={4}
-          spacing={4}
+          spacing={[4, 4, 8]}
           direction={{ base: 'column', md: 'row' }}
           justify={{ base: 'flex-start', md: 'space-between' }}
         >
@@ -111,7 +113,7 @@ const l4nding = () => {
             <Icon ml={1} as={RiDownloadLine} />
           </ButtonLink>
         </Stack>
-        <HStack width='full' justify='space-around'>
+        <HStack width='full' justify='center' spacing={[4, 4, 16]}>
           <IconLink href='mailto:d4niel.djm@gmail.com' icon={HiOutlineMail} />
           <IconLink
             href='https://www.linkedin.com/in/d4nielj/'

@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <title>D4nielJ&apos;s l4nding</title>
       </Head>
-      <Container maxW='container.md'>{children}</Container>
+      <Container>{children}</Container>
     </Box>
   );
 };

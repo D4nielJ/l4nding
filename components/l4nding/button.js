@@ -12,7 +12,7 @@ const ButtonLink = ({ href, download, children, props }) => {
         bg='black.800'
         variant='unstyled'
         py={2}
-        px={{base: '16', sm: '24', md: '12'}}
+        width={{ base: '60', md: '60' }}
         fontWeight='light'
         cursor='pointer'
         transition='ease-in-out'
