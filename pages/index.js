@@ -71,6 +71,7 @@ const l4nding = () => {
               height='212px'
               quality='100'
               rounded='lg'
+              placeholder='blur'
             />
           </MotionBox>
           <Image
@@ -80,6 +81,7 @@ const l4nding = () => {
             height='212px'
             quality='100'
             rounded='lg'
+            placeholder='blur'
           />
         </Box>
       </Stack>
