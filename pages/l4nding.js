@@ -10,12 +10,15 @@ import {
 import Icon from '@chakra-ui/icon';
 
 import { MotionBox, Image } from '../components/utils';
+import ButtonLink from '../components/l4nding/button';
+import IconLink from '../components/l4nding/icon';
 
 import { HiOutlineMail } from 'react-icons/hi';
 import {
   RiLinkedinBoxLine,
   RiTwitterLine,
   RiTelegramLine,
+  RiDownloadLine,
 } from 'react-icons/ri';
 
 import profilePicture from '../public/images/profile_l4nding.jpg';
@@ -25,38 +28,50 @@ const l4nding = () => {
   return (
     <VStack
       minH='100vh'
-      py={16}
-      px={12}
+      p={{ base: 12, md: 20 }}
       textAlign='center'
-      justify='space-between'
+      justifyContent={{ base: 'space-between', md: 'center' }}
+      spacing={{ base: 12, md: 20 }}
     >
-      <Box>
-        <Heading as='h1' size='md' letterSpacing='widest' fontWeight='bold'>
-          DANIEL J.
-        </Heading>
-        <Text fontWeight='light'>I&apos;m a Web Developer</Text>
-      </Box>
-
-      <Box position='relative'>
-        <MotionBox
-          position='absolute'
-          top='0'
-          right='0'
-          left='0'
-          bottom='0'
-          initial={{ rotate: -18 }}
-          animate={{ rotate: -6 }}
-          transition={{ yoyo: Infinity, duration: 1.5, ease: 'easeInOut' }}
-        >
-          <Image
-            src={bgPicture}
-            alt='Daniel Jaramillo'
-            width='159px'
-            height='212px'
-            quality='100'
-            rounded='lg'
-          />
-        </MotionBox>
+      <Stack
+        spacing={12}
+        direction={{ base: 'column', md: 'row-reverse' }}
+        textAlign={{ base: 'center', md: 'left' }}
+        alignItems={{ base: 'initial', md: 'center' }}
+      >
+        <Box position='relative'>
+          <Heading
+            as='h1'
+            fontSize={{ base: 'xl', md: '3xl' }}
+            letterSpacing='widest'
+            fontWeight='bold'
+          >
+            DANIEL J.
+          </Heading>
+          <Text fontWeight='light' fontSize={{ base: 'md', md: 'xl' }}>
+            I&apos;m a Web Developer
+          </Text>
+        </Box>
+        <Box position='relative'>
+          <MotionBox
+            position='absolute'
+            top='0'
+            right='0'
+            left='0'
+            bottom='0'
+            initial={{ rotate: -18 }}
+            animate={{ rotate: -6 }}
+            transition={{ yoyo: Infinity, duration: 1.5, ease: 'easeInOut' }}
+          >
+            <Image
+              src={bgPicture}
+              alt='Daniel Jaramillo'
+              width='159px'
+              height='212px'
+              quality='100'
+              rounded='lg'
+            />
+          </MotionBox>
           <Image
             src={profilePicture}
             alt='Daniel Jaramillo'
@@ -65,77 +80,53 @@ const l4nding = () => {
             quality='100'
             rounded='lg'
           />
-      </Box>
+        </Box>
+      </Stack>
 
       <Text
         fontWeight='bold'
-        fontSize='3xl'
+        fontSize={{ base: '3xl', md: '5xl' }}
         letterSpacing='tighter'
         lineHeight='shorter'
       >
         We can build cool stuff, together.
       </Text>
 
-      <Stack align='stretch' w='full' px={4}>
-        <Link
-          href='https://d4nielj.netlify.app/'
-          bg='black.800'
-          py={2}
-          fontWeight='light'
-          isExternal
+      <VStack spacing={8}>
+        <Stack
+          align='stretch'
+          px={4}
+          spacing={4}
+          direction={{ base: 'column', md: 'row' }}
+          justify={{ base: 'flex-start', md: 'space-between' }}
         >
-          Website
-        </Link>
-        <Link
-          href='../public/cv/d4nielj-cv.pdf'
-          bg='black.800'
-          py={2}
-          fontWeight='light'
-          download
-        >
-          Resume
-        </Link>
-        <Link
-          href='https://d4nielj.netlify.app/'
-          bg='black.800'
-          py={2}
-          fontWeight='light'
-          isExternal
-        >
-          GitHub
-        </Link>
-      </Stack>
-
-      <HStack width='full' justify='space-around'>
-        <a
-          href='mailto:d4niel.djm@gmail.com'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Icon fontSize='3xl' as={HiOutlineMail} />
-        </a>
-        <a
-          href='https://www.linkedin.com/in/d4nielj/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Icon fontSize='3xl' as={RiLinkedinBoxLine} />
-        </a>
-        <a
-          href='https://www.twitter.com/d4niel_jm/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Icon fontSize='3xl' as={RiTwitterLine} />
-        </a>
-        <a
-          href='https://www.telegram.me/d4nielj/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Icon fontSize='3xl' as={RiTelegramLine} />
-        </a>
-      </HStack>
+          <ButtonLink href='https://d4nielj.netlify.app/' isExternal>
+            Website
+          </ButtonLink>
+          <ButtonLink href='https://github.com/d4nielj' isExternal>
+            GitHub
+          </ButtonLink>
+          <ButtonLink href='../public/cv/d4nielj-cv.pdf' download>
+            Resume
+            <Icon ml={1} as={RiDownloadLine} />
+          </ButtonLink>
+        </Stack>
+        <HStack width='full' justify='space-around'>
+          <IconLink href='mailto:d4niel.djm@gmail.com' icon={HiOutlineMail} />
+          <IconLink
+            href='https://www.linkedin.com/in/d4nielj/'
+            icon={RiLinkedinBoxLine}
+          />
+          <IconLink
+            href='https://www.twitter.com/d4niel_jm/'
+            icon={RiTwitterLine}
+          />
+          <IconLink
+            href='https://www.telegram.me/d4nielj/'
+            icon={RiTelegramLine}
+          />
+        </HStack>
+      </VStack>
     </VStack>
   );
 };
