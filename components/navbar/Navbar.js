@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import { Box, HStack } from '@chakra-ui/layout';
-import Logo from '../shared/Logo';
+import { HStack } from '@chakra-ui/layout';
+import { AnimatePresence, useCycle } from 'framer-motion';
 import ToggleMenu from './Toggle.js';
-import { useCycle } from 'framer-motion';
+import { MotionBox } from '../utils';
+import { Logo, Backdrop } from '../shared';
+
 
 const Navbar = () => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -29,6 +31,17 @@ const Navbar = () => {
         onKeyDown={(e) => handleToggleKey(e)}
         color={'#fff'}
       />
+      <AnimatePresence initial={false} exitBeforeEnter={true}>
+        {open && (
+          <Backdrop
+            key='backdrop'
+            onClick={() => toggleOpen()}
+            onKeyDown={(e) => handleToggleKey(e)}
+          >
+            <MotionBox as='nav'></MotionBox>
+          </Backdrop>
+        )}
+      </AnimatePresence>
     </HStack>
   );
 };

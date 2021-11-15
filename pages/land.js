@@ -11,7 +11,6 @@ import {
   RiDownloadLine,
 } from 'react-icons/ri';
 
-import Logo from '../components/shared/Logo';
 import LandLayout from '../components/layouts/L4ndingLayout';
 
 const l4nding = () => {
