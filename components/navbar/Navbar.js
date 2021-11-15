@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Box } from '@chakra-ui/layout';
+import { Box, HStack } from '@chakra-ui/layout';
 import Logo from '../shared/Logo';
 import ToggleMenu from './Toggle.js';
 import { useCycle } from 'framer-motion';
@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <Box as='header'>
+    <HStack as='header' justify='space-between' align='center'>
       <Link href='/'>
         <a>
           <Logo />
@@ -29,7 +29,7 @@ const Navbar = () => {
         onKeyDown={(e) => handleToggleKey(e)}
         color={'#fff'}
       />
-    </Box>
+    </HStack>
   );
 };
 

@@ -1,4 +1,4 @@
-import { HStack, VStack, Stack, Box, Text } from '@chakra-ui/react';
+import { HStack, VStack, Stack, Box, Text, Heading } from '@chakra-ui/react';
 import Icon from '@chakra-ui/icon';
 
 import { Picture, ButtonLink, IconLink } from '../components/l4nding';
@@ -32,7 +32,14 @@ const l4nding = () => {
           alignItems={{ base: 'initial', md: 'center' }}
         >
           <Box position='relative' top={{ base: 0, md: 8 }}>
-            <Logo />
+            <Heading
+              as='h1'
+              fontSize={{ base: 'xl', md: '3xl' }}
+              letterSpacing='widest'
+              fontWeight='bold'
+            >
+              DANIEL J.
+            </Heading>
             <Text fontWeight='light' fontSize={{ base: 'md', md: 'xl' }}>
               I&apos;m a Web Developer
             </Text>
