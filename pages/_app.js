@@ -9,15 +9,12 @@ import '@fontsource/work-sans/700.css';
 import '@fontsource/work-sans/800.css';
 import '@fontsource/work-sans/900.css';
 import theme from '../lib/theme';
-import Layout from '../components/layouts/Layout';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <Layout>
         <Component {...pageProps} />
-      </Layout>
     </ChakraProvider>
   );
 }

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/layout';
 
-const Layout = ({ children }) => {
+const LandLayout = ({ children }) => {
   return (
     <Box as='main' bg='black.900' color='white'>
       <Head>
@@ -24,4 +24,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default LandLayout;
