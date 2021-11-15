@@ -1,3 +1,4 @@
+import '../styles/globals.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/work-sans/100.css';
 import '@fontsource/work-sans/200.css';
@@ -9,12 +10,11 @@ import '@fontsource/work-sans/700.css';
 import '@fontsource/work-sans/800.css';
 import '@fontsource/work-sans/900.css';
 import theme from '../lib/theme';
-import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 }

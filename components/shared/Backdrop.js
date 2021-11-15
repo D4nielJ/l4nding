@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { MotionBox } from '../utils';
 
 const Backdrop = ({ children, ...props }) => {
-  useEffect(() => {
-    document.body.classList.add('overflow-y-hidden');
-    return () => {
-      document.body.classList.remove('overflow-y-hidden');
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.body.classList.add('overflow-y-hidden');
+  //   return () => {
+  //     document.body.classList.remove('overflow-y-hidden');
+  //   };
+  // }, []);
 
   return (
     <MotionBox

@@ -1,5 +1,12 @@
+/* .firefox-fallback {
+  margin: 0;
+  padding: 0;
+  margin-inline-start: 0 !important;
+  -webkit-margin-start: 0 !important;
+} */
+
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .firefox-fallback {
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }
