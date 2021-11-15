@@ -19,6 +19,7 @@ const Backdrop = ({ children, ...props }) => {
       overflow='hidden'
       backdropFilter='auto'
       backdropBlur='8px'
+      className='firefox-fallback'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
