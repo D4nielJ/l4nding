@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         <meta property='og:title' content="D4nielj's web" />
         <title>D4nielJ&apos;s web</title>
       </Head>
-      <Container pt={8} px={{base: 6, md: 20}} maxW='container.xl'>
+      <Container pt={8} px={{base: 8, md: 20}} maxW='container.xl'>
         <Navbar />
         <Box as='main'>{children}</Box>
         {/* <Footer /> */}

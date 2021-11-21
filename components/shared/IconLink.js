@@ -11,7 +11,7 @@ const IconLink = ({ href, icon }) => {
         transitionProperty='all'
         transitionDuration='normal'
         _hover={{
-          transform: 'scale(1.2, 1.2)',
+          transform: 'scale(1.15, 1.15)',
         }}
       />
     </Link>

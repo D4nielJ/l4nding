@@ -5,7 +5,11 @@ import ToggleMenu from './Toggle';
 
 const NavHeader = ({ open, toggleOpen, handleToggleKey }) => {
   return (
-    <HStack justify='space-between' align='center'>
+    <HStack
+      justify={{ base: 'space-between', md: 'flex-end' }}
+      align='center'
+      mb={16}
+    >
       <Box display={{ base: 'auto', md: 'none' }}>
         <Link href='/'>
           <a onClick={() => toggleOpen()} onKeyDown={(e) => handleToggleKey(e)}>

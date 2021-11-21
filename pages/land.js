@@ -1,17 +1,10 @@
-import { HStack, VStack, Stack, Box, Text, Heading } from '@chakra-ui/react';
+import { VStack, Stack, Box, Text, Heading } from '@chakra-ui/react';
 import Icon from '@chakra-ui/icon';
+import { RiDownloadLine } from 'react-icons/ri';
 
-import { Picture, ButtonLink, IconLink } from '../components/l4nding';
-
-import { HiOutlineMail } from 'react-icons/hi';
-import {
-  RiLinkedinBoxLine,
-  RiTwitterLine,
-  RiTelegramLine,
-  RiDownloadLine,
-} from 'react-icons/ri';
-
+import { Picture, ButtonLink } from '../components/l4nding';
 import LandLayout from '../components/layouts/L4ndingLayout';
+import Icons from '../components/shared/Icons';
 
 const l4nding = () => {
   return (
@@ -74,21 +67,7 @@ const l4nding = () => {
               <Icon ml={1} as={RiDownloadLine} />
             </ButtonLink>
           </Stack>
-          <HStack width='full' justify='center' spacing={[4, 4, 16]}>
-            <IconLink href='mailto:d4niel.djm@gmail.com' icon={HiOutlineMail} />
-            <IconLink
-              href='https://www.linkedin.com/in/d4nielj/'
-              icon={RiLinkedinBoxLine}
-            />
-            <IconLink
-              href='https://www.twitter.com/d4niel_jm/'
-              icon={RiTwitterLine}
-            />
-            <IconLink
-              href='https://www.telegram.me/d4nielj/'
-              icon={RiTelegramLine}
-            />
-          </HStack>
+          <Icons justify='center' spacing={[4, 4, 16]} />
         </VStack>
       </VStack>
     </LandLayout>

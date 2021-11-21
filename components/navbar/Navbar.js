@@ -1,9 +1,11 @@
-import Link from 'next/link';
-import { Box, Flex } from '@chakra-ui/layout';
+import NextLink from 'next/link';
+import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import { AnimatePresence, useCycle } from 'framer-motion';
+
+import { Logo, Backdrop, Icons } from '../shared';
 import ToggleMenu from './Toggle.js';
-import { Logo, Backdrop } from '../shared';
 import NavHeader from './NavHeader.js';
+import NavLinks from './NavLinks.js';
 
 const Navbar = () => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -19,11 +21,11 @@ const Navbar = () => {
 
   return (
     <Flex justifyContent='space-between'>
-      <Link href='/'>
+      <NextLink href='/'>
         <a>
           <Logo />
         </a>
-      </Link>
+      </NextLink>
       <ToggleMenu
         open={open}
         onClick={() => toggleOpen()}
@@ -50,19 +52,28 @@ const Navbar = () => {
               display='flex'
               flexDirection='column'
               justifyContent='space-between'
-              pt={8}
-              px={6}
+              py={8}
+              px={{base: 8, md: 32}}
               color='white'
               bg='black'
               onClick={(e) => e.stopPropagation()}
               onKeyDown={(e) => handleToggleKey(e)}
             >
-              <NavHeader
-                open={open}
-                toggleOpen={toggleOpen}
-                onClick={() => toggleOpen()}
-                onKeyDown={handleToggleKey}
-              />
+              <Box>
+                <NavHeader
+                  open={open}
+                  toggleOpen={toggleOpen}
+                  onClick={() => toggleOpen()}
+                  onKeyDown={handleToggleKey}
+                />
+                <NavLinks
+                  onClick={() => toggleOpen()}
+                  onKeyDown={(e) => handleToggleKey(e)}
+                />
+              </Box>
+              <Box pb={8} mr={{base: 0, md: 32}}>
+                <Icons justify='flex-start' spacing={4} />
+              </Box>
             </Box>
           </Backdrop>
         )}
