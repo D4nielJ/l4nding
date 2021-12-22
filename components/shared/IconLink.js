@@ -1,5 +1,4 @@
-import Icon from '@chakra-ui/icon';
-import { Link } from '@chakra-ui/layout';
+import { Link, Icon } from '@chakra-ui/react';
 
 const IconLink = ({ href, icon, iconSize = '3xl' }) => {
   return (

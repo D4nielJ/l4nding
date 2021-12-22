@@ -4,9 +4,9 @@ import { Image, MotionBox } from '../utils';
 import photo from '../../public/images/photo.jpg';
 import photoBG from '../../public/images/photo-bg.jpg';
 
-const ProfilePicture = () => {
+const ProfilePicture = ({ ...props }) => {
   return (
-    <Box position='relative'>
+    <Box position='relative' {...props}>
       <MotionBox
         position='absolute'
         top={-3}

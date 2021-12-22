@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Box, Container } from '@chakra-ui/layout';
+import { Box, Container } from '@chakra-ui/react';
 
 const LandLayout = ({ children }) => {
   return (

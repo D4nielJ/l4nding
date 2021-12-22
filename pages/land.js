@@ -1,5 +1,4 @@
-import { VStack, Stack, Box, Text, Heading } from '@chakra-ui/react';
-import Icon from '@chakra-ui/icon';
+import { VStack, Stack, Box, Text, Heading, Icon } from '@chakra-ui/react';
 import { RiDownloadLine } from 'react-icons/ri';
 
 import { Picture, ButtonLink } from '../components/l4nding';

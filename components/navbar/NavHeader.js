@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Box, HStack } from '@chakra-ui/layout';
+import { Box, HStack } from '@chakra-ui/react';
 import { Logo } from '../shared';
 import ToggleMenu from './Toggle';
 
