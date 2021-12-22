@@ -10,9 +10,6 @@ const IconLink = ({ href, icon, iconSize = '3xl' }) => {
         transition='ease-out'
         transitionProperty='all'
         transitionDuration='normal'
-        _hover={{
-          transform: 'scale(1.05, 1.05)',
-        }}
       />
     </Link>
   );
