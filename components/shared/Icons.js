@@ -7,19 +7,29 @@ import {
   RiTelegramLine,
 } from 'react-icons/ri';
 
-const Icons = ({ justify, spacing }) => {
+const Icons = ({ justify, spacing, iconSize, ...props }) => {
   return (
-    <HStack width='full' justify={justify} spacing={spacing}>
-      <IconLink href='mailto:d4niel.djm@gmail.com' icon={HiOutlineMail} />
+    <HStack width='full' justify={justify} spacing={spacing} {...props}>
+      <IconLink
+        href='mailto:d4niel.djm@gmail.com'
+        icon={HiOutlineMail}
+        iconSize={iconSize}
+      />
       <IconLink
         href='https://www.linkedin.com/in/d4nielj/'
         icon={RiLinkedinBoxLine}
+        iconSize={iconSize}
       />
       <IconLink
         href='https://www.twitter.com/d4niel_jm/'
         icon={RiTwitterLine}
+        iconSize={iconSize}
       />
-      <IconLink href='https://www.telegram.me/d4nielj/' icon={RiTelegramLine} />
+      <IconLink
+        href='https://www.telegram.me/d4nielj/'
+        icon={RiTelegramLine}
+        iconSize={iconSize}
+      />
     </HStack>
   );
 };

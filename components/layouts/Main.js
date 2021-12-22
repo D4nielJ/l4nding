@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import { Box, Container } from '@chakra-ui/layout';
+import { Box, Container, VStack } from '@chakra-ui/react';
 import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
 const Layout = ({ children }) => {
   return (
@@ -20,11 +21,17 @@ const Layout = ({ children }) => {
         <meta property='og:title' content="D4nielj's web" />
         <title>D4nielJ&apos;s web</title>
       </Head>
-      <Container pt={8} px={{base: 8, md: 20}} maxW='container.xl'>
-        <Navbar />
-        <Box as='main'>{children}</Box>
-        {/* <Footer /> */}
-      </Container>
+      <Box minH='100vh' display='flex' flexDir='column'>
+        <Box flexGrow='1'>
+          <Container pt={8} px={{ base: 8, md: 20 }} maxW='container.xl'>
+            <Navbar />
+            <Box as='main'>{children}</Box>
+          </Container>
+        </Box>
+        <VStack bg='white' pt={8} px={{ base: 8, md: 20 }}>
+          <Footer />
+        </VStack>
+      </Box>
     </Box>
   );
 };
