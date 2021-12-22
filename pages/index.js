@@ -1,12 +1,13 @@
 import { Stack, Text } from '@chakra-ui/react';
+import ProfilePicture from '../components/homepage/ProfilePicture';
 
 import Layout from '../components/layouts/Main';
 
 const l4nding = () => {
   return (
     <Layout>
-      <Stack>
-        {/* ProfilePicture */}
+      <Stack direction='column' align='center' pt={28}>
+        <ProfilePicture />
         {/* SocialMedia Icons */}
         <Text fontWeight='light' fontSize={{ base: 'md', md: 'xl' }}>
           I&apos;m a Web Developer

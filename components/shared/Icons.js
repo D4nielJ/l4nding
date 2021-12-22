@@ -7,14 +7,16 @@ import {
   RiTelegramLine,
 } from 'react-icons/ri';
 
-const Icons = ({ justify, spacing, iconSize, ...props }) => {
+const Icons = ({ justify, spacing, iconSize, withMail = false, ...props }) => {
   return (
     <HStack width='full' justify={justify} spacing={spacing} {...props}>
-      <IconLink
-        href='mailto:d4niel.djm@gmail.com'
-        icon={HiOutlineMail}
-        iconSize={iconSize}
-      />
+      {withMail && (
+        <IconLink
+          href='mailto:d4niel.djm@gmail.com'
+          icon={HiOutlineMail}
+          iconSize={iconSize}
+        />
+      )}
       <IconLink
         href='https://www.linkedin.com/in/d4nielj/'
         icon={RiLinkedinBoxLine}
