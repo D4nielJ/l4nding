@@ -13,10 +13,10 @@ const SquareButton = ({
 
   const variants = {
     hover: {
-      y: [0, -20],
+      y: [1, -23],
     },
     notHover: {
-      y: [0, 0],
+      y: [1, 1],
     },
   };
 
@@ -30,6 +30,7 @@ const SquareButton = ({
       <Link
         href=''
         rounded='none'
+        bg='white'
         color='black'
         fontWeight='normal'
         px={10}
@@ -37,10 +38,10 @@ const SquareButton = ({
         fontSize={{ base: 'md', md: 'xl' }}
         {...props}
       >
-        <HStack spacing={2}>
+        <HStack spacing={3}>
           <Text>{text}</Text>
           <MotionBox
-            as='span'
+            as='div'
             h={1.5}
             w={1.5}
             rounded='full'
@@ -50,7 +51,7 @@ const SquareButton = ({
             transition={{
               duration: 0.3,
               yoyo: Infinity,
-              type: 'spring',
+              ease: 'easeOut',
             }}
           />
         </HStack>

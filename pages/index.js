@@ -7,7 +7,7 @@ import { Icons, SquareButton } from '../components/shared';
 const l4nding = () => {
   return (
     <Layout>
-      <Flex direction='column' align='center' pt={28}>
+      <Flex direction='column' align='center' py={28}>
         <ProfilePicture mb={12} />
         <Icons iconSize='2xl' justify='center' spacing={4} mb={16} />
         <Text fontWeight='light' fontSize={{ base: 'md', md: 'xl' }}>
@@ -20,11 +20,11 @@ const l4nding = () => {
           lineHeight='shorter'
           maxW='20ch'
           textAlign='center'
-          mb={8}
+          mb={12}
         >
           We can build awesome stuff, together.
         </Text>
-        <SquareButton href='/contact' text="Let's work" mb={16}/>
+        <SquareButton href='/contact' text="Let's work" />
       </Flex>
     </Layout>
   );

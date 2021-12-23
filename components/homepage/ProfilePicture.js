@@ -25,7 +25,7 @@ const ProfilePicture = ({ ...props }) => {
           </Box>
         </AspectRatio>
       </MotionBox>
-      <AspectRatio w={40} ratio={1}>
+      <AspectRatio w={48} ratio={1}>
         <Box>
           <Image
             src={photo}
