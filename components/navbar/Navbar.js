@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <Flex justifyContent='space-between'>
+    <Flex justifyContent='space-between' zIndex="3">
       <NextLink href='/'>
         <a>
           <Logo />

@@ -16,6 +16,7 @@ const Backdrop = ({ children, ...props }) => {
       left={0}
       w={'full'}
       h={'full'}
+      zIndex="80"
       overflow='hidden'
       backdropFilter='auto'
       backdropBlur='8px'

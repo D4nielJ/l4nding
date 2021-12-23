@@ -20,10 +20,11 @@ const l4nding = () => {
           lineHeight='shorter'
           maxW='20ch'
           textAlign='center'
+          mb={8}
         >
           We can build awesome stuff, together.
         </Text>
-        <SquareButton />
+        <SquareButton href='/contact' text="Let's work" mb={16}/>
       </Flex>
     </Layout>
   );
