@@ -1,4 +1,4 @@
-import { HStack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import { IconLink } from '../l4nding';
 import { HiOutlineMail } from 'react-icons/hi';
 import {
@@ -7,9 +7,22 @@ import {
   RiTelegramLine,
 } from 'react-icons/ri';
 
-const Icons = ({ justify, spacing, iconSize, withMail = false, ...props }) => {
+const Icons = ({
+  direction = 'row',
+  justify,
+  spacing,
+  iconSize,
+  withMail = false,
+  ...props
+}) => {
   return (
-    <HStack width='full' justify={justify} spacing={spacing} {...props}>
+    <Stack
+      direction={direction}
+      width='full'
+      justify={justify}
+      spacing={spacing}
+      {...props}
+    >
       {withMail && (
         <IconLink
           href='mailto:d4niel.djm@gmail.com'
@@ -32,7 +45,7 @@ const Icons = ({ justify, spacing, iconSize, withMail = false, ...props }) => {
         icon={RiTelegramLine}
         iconSize={iconSize}
       />
-    </HStack>
+    </Stack>
   );
 };
 

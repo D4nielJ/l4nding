@@ -13,10 +13,10 @@ const SquareButton = ({
 
   const variants = {
     hover: {
-      y: [1, -23],
+      y: [0, -23],
     },
     notHover: {
-      y: [1, 1],
+      y: [0, 0],
     },
   };
 
@@ -38,23 +38,22 @@ const SquareButton = ({
         fontSize={{ base: 'md', md: 'xl' }}
         {...props}
       >
-        <HStack spacing={3}>
-          <Text>{text}</Text>
-          <MotionBox
-            as='div'
-            h={1.5}
-            w={1.5}
-            rounded='full'
-            bg={color}
-            animate={isHover ? 'hover' : 'notHover'}
-            variants={variants}
-            transition={{
-              duration: 0.3,
-              yoyo: Infinity,
-              ease: 'easeOut',
-            }}
-          />
-        </HStack>
+        <Text mr={4}>{text}</Text>
+        <MotionBox
+          as='span'
+          h='6px'
+          w='6px'
+          verticalAlign='middle'
+          rounded='full'
+          bg={color}
+          animate={isHover ? 'hover' : 'notHover'}
+          variants={variants}
+          transition={{
+            duration: 0.25,
+            yoyo: Infinity,
+            ease: 'easeOut',
+          }}
+        />
       </Link>
     </Box>
   );

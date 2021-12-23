@@ -14,7 +14,7 @@ const ProfilePicture = ({ ...props }) => {
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
       >
-        <AspectRatio w={24} ratio={1}>
+        <AspectRatio w={[24, 24, 32]} ratio={1}>
           <Box>
             <Image
               src={photoBG}
@@ -25,7 +25,7 @@ const ProfilePicture = ({ ...props }) => {
           </Box>
         </AspectRatio>
       </MotionBox>
-      <AspectRatio w={48} ratio={1}>
+      <AspectRatio w={[48, 48, 60]} ratio={1}>
         <Box>
           <Image
             src={photo}
