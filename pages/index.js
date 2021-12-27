@@ -13,7 +13,7 @@ const l4nding = () => {
         py={[28, 28, 40]}
       >
         <Flex direction={['column', 'column', 'row']}>
-          <ProfilePicture mb={[12, 12, 0]} mr={[0, 0, 24]} />
+          <ProfilePicture mb={[12, 12, 0]} mr={[0, 0, 40]} />
           <Icons
             iconSize={['2xl', '2xl', '3xl']}
             direction={['row', 'row', 'column']}
@@ -32,7 +32,7 @@ const l4nding = () => {
           </Text>
           <Text
             fontWeight='bold'
-            fontSize={{ base: '3xl', md: '6xl' }}
+            fontSize={{ base: '3xl', md: '5xl' }}
             letterSpacing='tighter'
             lineHeight='1'
             maxW='19ch'

@@ -35,7 +35,7 @@ const SquareButton = ({
         fontWeight='normal'
         px={10}
         py={8}
-        fontSize={{ base: 'md', md: 'xl' }}
+        fontSize={{ base: 'md', md: 'lg' }}
         {...props}
       >
         <Text mr={4}>{text}</Text>
