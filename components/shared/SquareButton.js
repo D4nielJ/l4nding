@@ -49,7 +49,7 @@ const SquareButton = ({
           animate={isHover ? 'hover' : 'notHover'}
           variants={variants}
           transition={{
-            duration: 0.25,
+            duration: 0.27,
             yoyo: Infinity,
             ease: 'easeOut',
           }}

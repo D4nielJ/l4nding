@@ -1,4 +1,4 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, Text, Link } from '@chakra-ui/react';
 import React from 'react';
 import { Icons } from '../shared';
 import Links from './Links';
@@ -12,16 +12,17 @@ const Footer = () => {
       align='center'
       maxW='container.xl'
     >
-      <Text
+      <Link
         fontWeight='bold'
         fontSize={{ base: '2xl', md: '3xl' }}
         letterSpacing='tighter'
         lineHeight='shorter'
         maxW='20ch'
         mb={1}
+        href='mailto:d4niel.djm@gmail.com'
       >
         d4niel.djm@gmail.com
-      </Text>
+      </Link>
       <Text fontWeight='light' fontSize={{ base: 'lg', md: 'xl' }} mb={20}>
         Let&apos;s talk
       </Text>
