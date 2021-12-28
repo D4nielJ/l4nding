@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Box, Container, VStack } from '@chakra-ui/react';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
+import { MotionBox } from '../utils';
 
 const Layout = ({ children }) => {
   return (
@@ -25,7 +26,14 @@ const Layout = ({ children }) => {
         <Box flexGrow='1'>
           <Container pt={8} px={{ base: 8, md: 20 }} maxW='container.xl'>
             <Navbar />
-            <Box as='main'>{children}</Box>
+            <MotionBox
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              as='main'
+            >
+              {children}
+            </MotionBox>
           </Container>
         </Box>
         <VStack bg='white' pt={8} px={{ base: 8, md: 20 }}>

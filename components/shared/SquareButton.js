@@ -28,7 +28,7 @@ const SquareButton = ({
       onBlur={() => setIsHover(false)}
     >
       <Link
-        href=''
+        href={href}
         rounded='none'
         bg='white'
         color='black'

@@ -38,6 +38,7 @@ const l4nding = () => {
             maxW='19ch'
             textAlign={['center', 'center', 'left']}
             mb={12}
+            zIndex={2}
           >
             We can build awesome stuff, together.
           </Text>
