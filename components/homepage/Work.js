@@ -9,11 +9,18 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useCycle } from 'framer-motion';
+import { SquareButton } from '../shared';
 
 const Work = ({ work, ...props }) => {
   const [open, setOpen] = useCycle(false, true);
   return (
-    <Flex direction='column' alignItems='flex-start' w='full' spacing={3} p={4}>
+    <Flex
+      direction='column'
+      alignItems='flex-start'
+      w='full'
+      spacing={3}
+      py={4}
+    >
       <Text fontWeight='light' fontSize='xl' mb={2}>
         {work.title}
       </Text>
@@ -51,8 +58,10 @@ const Work = ({ work, ...props }) => {
         />
         <Text fontWeight='light'>{work.year}</Text>
       </HStack>
-      <Text fontWeight='light' mb={4}>{work.shortDesc}</Text>
-      <HStack mb={2}>
+      <Text fontWeight='light' mb={4}>
+        {work.shortDesc}
+      </Text>
+      <HStack mb={4}>
         {work &&
           work.tags.map((tag) => (
             <Text
@@ -62,15 +71,20 @@ const Work = ({ work, ...props }) => {
               borderColor='black.600'
               px={3}
               key={tag}
+              noOfLines={1}
             >
               {tag}
             </Text>
           ))}
       </HStack>
       <Box as='button' mb={6}>
-        <Text fontWeight='light' fontSize='lg' textDecor='underline'>
-          See work
-        </Text>
+        <SquareButton
+          fontSize={{ base: 'sm', md: 'md' }}
+          px={6}
+          py={3}
+          href='/contact'
+          text='See project'
+        />
       </Box>
       <Divider opacity='1' />
     </Flex>

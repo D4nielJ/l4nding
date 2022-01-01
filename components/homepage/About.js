@@ -18,7 +18,7 @@ const About = () => {
         About me.
       </Text>
       <Divider opacity='1' mb={12} />
-      <AspectRatio w='full' ratio={{ base: 3 / 4, md: 21 / 6 }} mb={12}>
+      <AspectRatio w='full' ratio={{ base: 3 / 4, md: 21 / 6 }} mb={6}>
         <Box w='full' h='full'>
           <Image
             src={MedellinPhoto}

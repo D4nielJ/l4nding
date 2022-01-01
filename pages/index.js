@@ -43,7 +43,7 @@ const l4nding = () => {
           >
             We can build awesome stuff, together.
           </Text>
-          <SquareButton href='/contact' text="Let's work" />
+          <SquareButton as='a' href='/contact' text="Let's work" withBall />
         </Flex>
       </Flex>
       <About />
