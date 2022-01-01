@@ -1,7 +1,7 @@
-import { Flex, Text } from '@chakra-ui/react';
-import ProfilePicture from '../components/homepage/ProfilePicture';
+import { Flex, Text, Divider } from '@chakra-ui/react';
 
 import Layout from '../components/layouts/Main';
+import { ProfilePicture, About, Work } from '../components/homepage';
 import { Icons, SquareButton } from '../components/shared';
 
 const l4nding = () => {
@@ -11,6 +11,7 @@ const l4nding = () => {
         direction={['column', 'column', 'row-reverse']}
         align='center'
         py={[28, 28, 40]}
+        mb={[4, 4, 8]}
       >
         <Flex direction={['column', 'column', 'row']}>
           <ProfilePicture mb={[12, 12, 0]} mr={[0, 0, 40]} />
@@ -45,6 +46,20 @@ const l4nding = () => {
           <SquareButton href='/contact' text="Let's work" />
         </Flex>
       </Flex>
+      <About />
+      <Text
+        fontWeight='bold'
+        fontSize={{ base: '3xl', md: '4xl' }}
+        letterSpacing='tighter'
+        lineHeight='1'
+        maxW='19ch'
+        textAlign={['center', 'center', 'left']}
+        mb={2}
+        zIndex={2}
+      >
+        Work.
+      </Text>
+      <Divider opacity='1' mb={12} />
     </Layout>
   );
 };
