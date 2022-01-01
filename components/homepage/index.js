@@ -1,5 +1,5 @@
 import About from './About';
-import Work from './Work';
+import Works from './Works';
 import ProfilePicture from './ProfilePicture';
 
-export { About, Work, ProfilePicture };
+export { About, Works, ProfilePicture };

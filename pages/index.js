@@ -1,7 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
 
 import Layout from '../components/layouts/Main';
-import { ProfilePicture, About, Work } from '../components/homepage';
+import { ProfilePicture, About, Works } from '../components/homepage';
 import { Icons, SquareButton } from '../components/shared';
 
 const l4nding = () => {
@@ -47,7 +47,7 @@ const l4nding = () => {
         </Flex>
       </Flex>
       <About />
-      <Work />
+      <Works />
     </Layout>
   );
 };
