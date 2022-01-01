@@ -1,4 +1,4 @@
-import { Flex, Text, Divider } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
 import Layout from '../components/layouts/Main';
 import { ProfilePicture, About, Work } from '../components/homepage';
@@ -36,7 +36,7 @@ const l4nding = () => {
             fontSize={{ base: '3xl', md: '5xl' }}
             letterSpacing='tighter'
             lineHeight='1'
-            maxW='19ch'
+            maxW={{ base: 'none', md: '19ch' }}
             textAlign={['center', 'center', 'left']}
             mb={12}
             zIndex={2}
@@ -47,19 +47,7 @@ const l4nding = () => {
         </Flex>
       </Flex>
       <About />
-      <Text
-        fontWeight='bold'
-        fontSize={{ base: '3xl', md: '4xl' }}
-        letterSpacing='tighter'
-        lineHeight='1'
-        maxW='19ch'
-        textAlign={['center', 'center', 'left']}
-        mb={2}
-        zIndex={2}
-      >
-        Work.
-      </Text>
-      <Divider opacity='1' mb={12} />
+      <Work />
     </Layout>
   );
 };
