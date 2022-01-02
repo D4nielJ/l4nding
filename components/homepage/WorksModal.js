@@ -11,28 +11,26 @@ import Image from 'next/image';
 import React from 'react';
 import ToggleMenu from '../navbar/Toggle';
 import { VscChevronLeft, VscChevronRight } from 'react-icons/vsc';
+import { RiGithubLine, RiExternalLinkLine } from 'react-icons/ri';
 import { SquareButton } from '../shared';
 
 const WorksModal = ({ work, toggleOpen, ...props }) => {
   return (
-    <Box
-      position='fixed'
-      inset={0}
-      onClick={(e) => e.stopPropagation()}
-      {...props}
-    >
+    <Box position='fixed' inset={0} {...props}>
       <VStack
+        onClick={(e) => e.stopPropagation()}
         overflow='auto'
         w='full'
         h='full'
-        bg='black.900'
+        bg='black'
         color='white'
         py={8}
         px={{ base: 8, md: 32 }}
+        mx='auto'
       >
         <Box maxW='container.lg'>
           {/* Controles */}
-          <HStack w='full' justify='space-between' mb={4}>
+          <HStack w='full' justify='space-between' mb={8}>
             <HStack spacing={4}>
               <Icon as={VscChevronLeft} fontSize='2xl' />
               <Icon as={VscChevronRight} fontSize='2xl' />
@@ -126,17 +124,27 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
                 fontSize={{ base: 'sm', md: 'md' }}
                 px={6}
                 py={3}
-                href='/contact'
                 text='Live'
-                onClick={toggleOpen}
+                as='a'
+                href={work.liveURL}
+                target='_blank'
+                rel='noopener noreferrer'
+                icon={RiExternalLinkLine}
+                iconSize='lg'
+                spacing={2}
               />
               <SquareButton
                 fontSize={{ base: 'sm', md: 'md' }}
                 px={6}
                 py={3}
-                href='/contact'
                 text='GitHub'
-                onClick={toggleOpen}
+                as='a'
+                href={work.sourceURL}
+                target='_blank'
+                rel='noopener noreferrer'
+                icon={RiGithubLine}
+                iconSize='lg'
+                spacing={2}
               />
             </HStack>
           </Flex>

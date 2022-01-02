@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import { Text, HStack } from '@chakra-ui/react';
+import { Text, HStack, Icon } from '@chakra-ui/react';
 import BouncingBall from './BouncingBall';
 
 const SquareButton = ({
   text = '',
   color = 'black.900',
+  icon = null,
+  iconSize = 'xl',
   withBall,
+  as = 'button',
+  children,
   ...props
 }) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
     <HStack
+      as={as}
       onMouseOver={() => setIsHover(true)}
       onFocus={() => setIsHover(true)}
       onMouseOut={() => setIsHover(false)}
@@ -28,6 +33,7 @@ const SquareButton = ({
       {...props}
     >
       <Text display='inline-block'>{text}</Text>
+      {icon && <Icon as={icon} fontSize={iconSize} />}
       {withBall && <BouncingBall isBouncing={isHover} color={color} />}
     </HStack>
   );

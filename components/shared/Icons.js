@@ -5,6 +5,7 @@ import {
   RiLinkedinBoxLine,
   RiTwitterLine,
   RiTelegramLine,
+  RiGithubLine,
 } from 'react-icons/ri';
 
 const Icons = ({
@@ -33,6 +34,11 @@ const Icons = ({
       <IconLink
         href='https://www.linkedin.com/in/d4nielj/'
         icon={RiLinkedinBoxLine}
+        iconSize={iconSize}
+      />
+      <IconLink
+        href='https://github.com/d4nielj'
+        icon={RiGithubLine}
         iconSize={iconSize}
       />
       <IconLink
