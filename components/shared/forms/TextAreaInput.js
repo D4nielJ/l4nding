@@ -1,13 +1,15 @@
-import { useField } from 'formik';
+import { useField, useFormikContext } from 'formik';
 import {
   FormControl,
   FormLabel,
   Textarea,
   FormErrorMessage,
 } from '@chakra-ui/react';
+import { useEffect } from 'react';
 
-const TextAreaInput = ({ label, type, placeholder, ...props }) => {
+const TextAreaInput = ({ sent, label, type, placeholder, ...props }) => {
   const [field, meta] = useField(props);
+
   return (
     <FormControl isInvalid={meta.touched && meta.error}>
       <FormLabel srOnly htmlFor={props.name}>

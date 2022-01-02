@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Text, Divider, VStack } from '@chakra-ui/react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, useFormikContext } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import { TextInput, TextAreaInput } from '../shared/forms';
 import { SquareButton } from '../shared';
+import { InsideForm } from './InsideForm';
 
 const Contact = () => {
+  const [sent, setSent] = useState(false);
+  let initialValues = null;
+  if (typeof window !== 'undefined') {
+    initialValues = JSON.parse(localStorage.getItem('contactForm')) || {
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: '',
+    };
+  }
+
   return (
     <Box as='section' id='contact' mb={28}>
       <Text
@@ -31,56 +44,34 @@ const Contact = () => {
           that you need built or a project that needs coding. I would love to
           help with it.
         </Text>
-        <Formik
-          initialValues={{
-            firstName: '',
-            lastName: '',
-            email: '',
-            message: '',
-          }}
-          validationSchema={Yup.object({
-            firstName: Yup.string().required('Required'),
-            lastName: Yup.string().required('Required'),
-            email: Yup.string()
-              .email('Invalid email address')
-              .required('Required'),
-            message: Yup.string().required('Required'),
-          })}
-          onSubmit={(fields, { setSubmitting }) => {
-            setSubmitting(false);
-          }}
-        >
-          {(props) => (
-            <Form>
-              <TextInput
-                label='First name'
-                name='firstName'
-                type='text'
-                placeholder='First name'
-              />
-              <TextInput
-                label='Last name'
-                name='lastName'
-                type='text'
-                placeholder='Last name'
-              />
-              <TextInput
-                label='Email address'
-                name='email'
-                type='email'
-                placeholder='Email address'
-              />
-              <TextAreaInput
-                label='Write your message here...'
-                name='message'
-                type='text'
-                placeholder='Write your message here...'
-                mb={6}
-              />
-              <SquareButton text='Send' withBall />
-            </Form>
-          )}
-        </Formik>
+        {initialValues && (
+          <Formik
+            initialValues={initialValues}
+            validationSchema={Yup.object({
+              firstName: Yup.string().max(20, 'Maximun 20 characters allowed').required('Required'),
+              lastName: Yup.string().max(20, 'Maximun 20 characters allowed').required('Required'),
+              email: Yup.string()
+                .email('Invalid email address')
+                .required('Required'),
+              message: Yup.string().max(1000, 'Maximum 1000 characters allowed').required('Required'),
+            })}
+            onSubmit={async (values, { setSubmitting }) => {
+              setSent(false);
+              await axios.post('https://formspree.io/f/mpzbwjzw', values);
+              setSent(true);
+              setSubmitting(false);
+            }}
+          >
+            {({ ...props }) => (
+              <InsideForm {...props} sent={sent} setSent={setSent} />
+            )}
+          </Formik>
+        )}
+        {sent && (
+          <Text fontWeight='light' fontSize={{ base: 'md', md: 'lg' }} pt={4}>
+            Your message has been sent correctly! :&#41;
+          </Text>
+        )}
       </VStack>
     </Box>
   );

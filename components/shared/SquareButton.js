@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, HStack, Icon } from '@chakra-ui/react';
 import BouncingBall from './BouncingBall';
 
@@ -9,6 +9,8 @@ const SquareButton = ({
   iconSize = 'xl',
   withBall,
   as = 'button',
+  isLoading = false,
+  state = false,
   children,
   ...props
 }) => {
@@ -34,7 +36,9 @@ const SquareButton = ({
     >
       <Text display='inline-block'>{text}</Text>
       {icon && <Icon as={icon} fontSize={iconSize} />}
-      {withBall && <BouncingBall isBouncing={isHover} color={color} />}
+      {withBall && (
+        <BouncingBall isBouncing={isHover || isLoading} color={color} />
+      )}
     </HStack>
   );
 };
