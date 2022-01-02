@@ -22,6 +22,7 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
       {...props}
     >
       <VStack
+        overflow='auto'
         w='full'
         h='full'
         bg='black.900'
@@ -30,11 +31,7 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
         px={{ base: 8, md: 32 }}
       >
         {/* Controles */}
-        <HStack
-          w='full'
-          justify={{ base: 'space-between', md: 'flex-end' }}
-          mb={4}
-        >
+        <HStack w='full' justify='space-between' mb={4}>
           <HStack spacing={4}>
             <Icon as={VscChevronLeft} fontSize='2xl' />
             <Icon as={VscChevronRight} fontSize='2xl' />

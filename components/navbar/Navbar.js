@@ -6,6 +6,8 @@ import { Logo, Backdrop, Icons } from '../shared';
 import ToggleMenu from './Toggle.js';
 import NavHeader from './NavHeader.js';
 import NavLinks from './NavLinks.js';
+import { controlBodyFlow } from '../utils';
+import { useEffect } from 'react';
 
 const Navbar = () => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -18,6 +20,10 @@ const Navbar = () => {
       toggleOpen();
     }
   };
+
+  useEffect(() => {
+    controlBodyFlow(open);
+  }, [open]);
 
   return (
     <Flex justifyContent='space-between' zIndex='3'>
@@ -35,7 +41,7 @@ const Navbar = () => {
 
       <AnimatePresence initial={false} exitBeforeEnter={true}>
         {open && (
-          <Backdrop key='backdrop' toggleOpen={toggleOpen}>
+          <Backdrop key='backdrop' open={open} toggleOpen={toggleOpen}>
             <Box
               as='nav'
               key='nav'

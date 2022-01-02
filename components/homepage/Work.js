@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Flex,
   Text,
@@ -6,16 +6,19 @@ import {
   Box,
   Divider,
   HStack,
-  Grid,
-  GridItem,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { AnimatePresence, useCycle } from 'framer-motion';
 import { Backdrop, SquareButton } from '../shared';
 import WorksModal from './WorksModal';
+import { controlBodyFlow } from '../utils';
 
 const Work = ({ work, last, ...props }) => {
   const [open, toggleOpen] = useCycle(false, true);
+
+  useEffect(() => {
+    controlBodyFlow(open);
+  }, [open]);
 
   return (
     <Box w='full' {...props}>
