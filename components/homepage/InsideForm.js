@@ -3,18 +3,18 @@ import { Form, useFormikContext } from 'formik';
 import { TextAreaInput, TextInput } from '../shared/forms';
 import { SquareButton } from '../shared';
 
-export const InsideForm = ({ isSubmitting, sent, setSent }) => {
+const FormFields = ({ isSubmitting, sent, setSent }) => {
   const {
     values: { firstName, lastName, email, message },
   } = useFormikContext();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (firstName || lastName || email || message) {
       setSent(false);
     }
   }, [firstName, lastName, email, message, setSent]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     localStorage.setItem(
       'contactForm',
       JSON.stringify({
@@ -58,3 +58,5 @@ export const InsideForm = ({ isSubmitting, sent, setSent }) => {
     </Form>
   );
 };
+
+export default FormFields;
