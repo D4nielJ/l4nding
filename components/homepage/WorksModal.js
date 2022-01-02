@@ -28,7 +28,7 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
         px={{ base: 8, md: 32 }}
         mx='auto'
       >
-        <Box maxW='container.lg'>
+        <Box maxW='container.xl' px={{ base: 8, md: 20 }}>
           {/* Controles */}
           <HStack w='full' justify='space-between' mb={8}>
             <HStack spacing={4}>
@@ -72,7 +72,7 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
             >
               {work.title}
             </Text>
-            <HStack alignItems='baseline' order={{ md: -1 }} mb={[2, 2, 5]}>
+            <HStack alignItems='baseline' order={{ md: -1 }} mb={[2, 2, 3]}>
               <Text fontWeight='light' fontSize={{ base: 'lg', md: 'xl' }}>
                 {work.company}
               </Text>{' '}
