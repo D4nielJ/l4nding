@@ -1,13 +1,14 @@
 import { Flex, Text } from '@chakra-ui/react';
 
 import Layout from '../components/layouts/Main';
-import { ProfilePicture, About, Works } from '../components/homepage';
+import { ProfilePicture, About, Works, Contact } from '../components/homepage';
 import { Icons, SquareButton } from '../components/shared';
 
 const l4nding = () => {
   return (
     <Layout>
       <Flex
+        as='section'
         direction={['column', 'column', 'row-reverse']}
         align='center'
         py={[28, 28, 40]}
@@ -48,6 +49,7 @@ const l4nding = () => {
       </Flex>
       <About />
       <Works />
+      <Contact />
     </Layout>
   );
 };

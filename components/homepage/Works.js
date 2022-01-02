@@ -20,7 +20,7 @@ const Works = () => {
       <Divider opacity='1' mb={12} />
       <VStack spacing={8}>
         {works.map((w, idx) => (
-          <Work key={idx} work={w} />
+          <Work key={w.id} work={w} last={idx === works.length - 1} />
         ))}
       </VStack>
       {works.length === 0 && <div>No works to show, I&apos;m sorry</div>}

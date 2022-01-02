@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, Box } from '@chakra-ui/react';
+import { Text, HStack } from '@chakra-ui/react';
 import BouncingBall from './BouncingBall';
 
 const SquareButton = ({
@@ -11,7 +11,7 @@ const SquareButton = ({
   const [isHover, setIsHover] = useState(false);
 
   return (
-    <Box
+    <HStack
       onMouseOver={() => setIsHover(true)}
       onFocus={() => setIsHover(true)}
       onMouseOut={() => setIsHover(false)}
@@ -22,15 +22,14 @@ const SquareButton = ({
       fontSize={{ base: 'md', md: 'lg' }}
       px={10}
       py={5}
+      spacing={3}
       color={color}
       cursor='pointer'
       {...props}
     >
-      <Text display='inline-block' mr={4}>
-        {text}
-      </Text>
+      <Text display='inline-block'>{text}</Text>
       {withBall && <BouncingBall isBouncing={isHover} color={color} />}
-    </Box>
+    </HStack>
   );
 };
 
