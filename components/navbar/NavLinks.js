@@ -1,37 +1,36 @@
 import ActiveLink from './ActiveLink';
-import { nanoid } from 'nanoid';
 import { VStack } from '@chakra-ui/react';
 
 const links = [
   {
-    id: nanoid(),
+    id: 'home',
     name: 'Home',
     address: '/',
     enable: true,
   },
   {
-    id: nanoid(),
-    name: 'Projects',
-    address: '/projects',
-    enable: true,
-  },
-  {
-    id: nanoid(),
+    id: 'stats',
     name: 'Stats',
     address: '/stats',
-    enable: true,
-  },
-  {
-    id: nanoid(),
-    name: 'Contact',
-    address: '/contact',
-    enable: true,
-  },
-  {
-    id: nanoid(),
-    name: 'Styles',
-    address: '/styles',
     enable: false,
+  },
+  {
+    id: 'about',
+    name: 'About me',
+    address: '#about',
+    enable: true,
+  },
+  {
+    id: 'work',
+    name: 'Work',
+    address: '#work',
+    enable: true,
+  },
+  {
+    id: 'contact',
+    name: 'Contact',
+    address: '#contact',
+    enable: true,
   },
 ];
 

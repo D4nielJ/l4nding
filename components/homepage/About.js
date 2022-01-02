@@ -5,7 +5,7 @@ import MedellinPhoto from '../../public/images/medellin/6.jpg';
 
 const About = () => {
   return (
-    <Box as='section'>
+    <Box as='section' id='about'>
       <Text
         fontWeight='bold'
         fontSize={{ base: '3xl', md: '4xl' }}
@@ -29,7 +29,12 @@ const About = () => {
           />
         </Box>
       </AspectRatio>
-      <Text fontWeight='light' maxW="64ch" fontSize={{ base: 'lg', md: '2xl' }} mb={28}>
+      <Text
+        fontWeight='light'
+        maxW='64ch'
+        fontSize={{ base: 'lg', md: '2xl' }}
+        mb={28}
+      >
         I’m a software developer from Medellín, Colombia! I can help you build a
         product, feature or website. Look through some of my work and
         experience! If you like what you see and have a project you need coded,

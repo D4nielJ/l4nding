@@ -5,7 +5,7 @@ import works from '../../lib/projects';
 
 const Works = () => {
   return (
-    <Box as='section' mb={28}>
+    <Box as='section' id="work" mb={28}>
       <Text
         fontWeight='bold'
         fontSize={{ base: '3xl', md: '4xl' }}
