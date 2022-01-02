@@ -1,13 +1,14 @@
-import { useEffect } from 'react';
 import { MotionBox } from '../utils';
 
-const Backdrop = ({ children, ...props }) => {
-  // useEffect(() => {
-  //   document.body.classList.add('overflow-y-hidden');
-  //   return () => {
-  //     document.body.classList.remove('overflow-y-hidden');
-  //   };
-  // }, []);
+const Backdrop = ({ toggleOpen, children, ...props }) => {
+  const handleToggleKey = (e) => {
+    if (e.keyCode === 13) {
+      toggleOpen();
+    }
+    if (e.keyCode === 27) {
+      toggleOpen();
+    }
+  };
 
   return (
     <MotionBox
@@ -16,7 +17,7 @@ const Backdrop = ({ children, ...props }) => {
       left={0}
       w={'full'}
       h={'full'}
-      zIndex="80"
+      zIndex='80'
       overflow='hidden'
       backdropFilter='auto'
       backdropBlur='8px'
@@ -25,6 +26,8 @@ const Backdrop = ({ children, ...props }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
+      onClick={() => toggleOpen()}
+      onKeyDown={(e) => handleToggleKey(e)}
       {...props}
     >
       {children}

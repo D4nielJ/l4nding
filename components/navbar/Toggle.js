@@ -36,6 +36,8 @@ const ToggleMenu = ({ open, color, ...props }) => (
     w={6}
     variants={btnVariants}
     animate={open ? 'open' : 'closed'}
+    position='relative'
+    bottom={1}
     {...props}
   >
     <svg

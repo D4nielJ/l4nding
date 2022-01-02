@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <Flex justifyContent='space-between' zIndex="3">
+    <Flex justifyContent='space-between' zIndex='3'>
       <NextLink href='/'>
         <a>
           <Logo />
@@ -35,11 +35,7 @@ const Navbar = () => {
 
       <AnimatePresence initial={false} exitBeforeEnter={true}>
         {open && (
-          <Backdrop
-            key='backdrop'
-            onClick={() => toggleOpen()}
-            onKeyDown={(e) => handleToggleKey(e)}
-          >
+          <Backdrop key='backdrop' toggleOpen={toggleOpen}>
             <Box
               as='nav'
               key='nav'

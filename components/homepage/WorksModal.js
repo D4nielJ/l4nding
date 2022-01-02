@@ -1,40 +1,53 @@
-import React from 'react';
 import {
-  Flex,
-  Text,
-  AspectRatio,
   Box,
-  Divider,
+  VStack,
+  Text,
   HStack,
-  Grid,
-  GridItem,
+  Icon,
+  AspectRatio,
+  Flex,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { AnimatePresence, useCycle } from 'framer-motion';
-import { Backdrop, SquareButton } from '../shared';
-import WorksModal from './WorksModal';
+import React from 'react';
+import ToggleMenu from '../navbar/Toggle';
+import { VscChevronLeft, VscChevronRight } from 'react-icons/vsc';
+import { SquareButton } from '../shared';
 
-const Work = ({ work, last, ...props }) => {
-  const [open, toggleOpen] = useCycle(false, true);
-
+const WorksModal = ({ work, toggleOpen, ...props }) => {
   return (
-    <Box w='full' {...props}>
-      <Flex
-        direction={{ base: 'column', md: 'row' }}
-        alignItems='flex-start'
+    <Box
+      position='fixed'
+      inset={0}
+      onClick={(e) => e.stopPropagation()}
+      {...props}
+    >
+      <VStack
         w='full'
-        spacing={3}
-        py={4}
+        h='full'
+        bg='black.900'
+        color='white'
+        py={8}
+        px={{ base: 8, md: 32 }}
       >
-        <Text
-          display={{ md: 'none' }}
-          fontWeight='light'
-          fontSize='xl'
-          mb={2}
-          onClick={toggleOpen}
+        {/* Controles */}
+        <HStack
+          w='full'
+          justify={{ base: 'space-between', md: 'flex-end' }}
+          mb={4}
         >
-          {work.title}
-        </Text>
+          <HStack spacing={4}>
+            <Icon as={VscChevronLeft} fontSize='2xl' />
+            <Icon as={VscChevronRight} fontSize='2xl' />
+          </HStack>
+          <ToggleMenu
+            open={open}
+            onClick={() => toggleOpen()}
+            onKeyDown={(e) => handleToggleKey(e)}
+            color={'#fff'}
+          />{' '}
+        </HStack>
+
+        {/* Slider */}
         <AspectRatio
           w='full'
           ratio={4 / 3}
@@ -42,7 +55,7 @@ const Work = ({ work, last, ...props }) => {
           mb={[4, 4, 6]}
           mr={[0, 0, 10]}
         >
-          <Box w='full' h='full'>
+          <Box h='full' w='full'>
             <Image
               src={`/images/projects/desktop/${work.imgs[0]}`}
               alt={work.title}
@@ -52,11 +65,12 @@ const Work = ({ work, last, ...props }) => {
             />
           </Box>
         </AspectRatio>
+
+        {/* Info más links */}
         <Flex direction='column' alignItems='flex-start'>
           <Text
-            display={{ base: 'none', md: 'block' }}
             fontWeight='light'
-            fontSize='4xl'
+            fontSize={{ base: '3xl', md: '4xl' }}
             onClick={toggleOpen}
           >
             {work.title}
@@ -89,7 +103,7 @@ const Work = ({ work, last, ...props }) => {
             </Text>
           </HStack>
           <Text fontWeight='light' fontSize={{ md: 'lg' }} mb={[4, 4, 5]}>
-            {work.shortDesc}
+            {work.longDesc}
           </Text>
           <Flex wrap='wrap' mb={[2, 2, 3]}>
             {work &&
@@ -108,26 +122,28 @@ const Work = ({ work, last, ...props }) => {
                 </Text>
               ))}
           </Flex>
-          <SquareButton
-            fontSize={{ base: 'sm', md: 'md' }}
-            px={6}
-            py={3}
-            href='/contact'
-            text='See project'
-            onClick={toggleOpen}
-          />
+          <HStack>
+            <SquareButton
+              fontSize={{ base: 'sm', md: 'md' }}
+              px={6}
+              py={3}
+              href='/contact'
+              text='Live'
+              onClick={toggleOpen}
+            />
+            <SquareButton
+              fontSize={{ base: 'sm', md: 'md' }}
+              px={6}
+              py={3}
+              href='/contact'
+              text='GitHub'
+              onClick={toggleOpen}
+            />
+          </HStack>
         </Flex>
-      </Flex>
-      {!last && <Divider opacity='0.3' />}
-      <AnimatePresence initial={false} exitBeforeEnter={true}>
-        {open && (
-          <Backdrop key='backdrop' toggleOpen={toggleOpen}>
-            <WorksModal work={work} toggleOpen={toggleOpen} />
-          </Backdrop>
-        )}
-      </AnimatePresence>
+      </VStack>
     </Box>
   );
 };
 
-export default Work;
+export default WorksModal;
