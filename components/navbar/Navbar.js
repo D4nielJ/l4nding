@@ -7,7 +7,7 @@ import ToggleMenu from './Toggle.js';
 import NavHeader from './NavHeader.js';
 import NavLinks from './NavLinks.js';
 import { controlBodyFlow } from '../utils';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -24,6 +24,25 @@ const Navbar = () => {
   useEffect(() => {
     controlBodyFlow(open);
   }, [open]);
+
+  const [prevPosY, setPrevPosY] = useState(0);
+  const [upOrDown, setUpOrDown] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const prev = prevPosY;
+      const actual = window.pageYOffset;
+      setUpOrDown(actual - prev);
+      setPrevPosY(actual);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevPosY]);
+
+  console.log(upOrDown);
 
   return (
     <Flex
