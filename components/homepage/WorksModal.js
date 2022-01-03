@@ -8,13 +8,51 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ToggleMenu from '../navbar/Toggle';
 import { VscChevronLeft, VscChevronRight } from 'react-icons/vsc';
 import { RiGithubLine, RiExternalLinkLine } from 'react-icons/ri';
 import { SquareButton } from '../shared';
+import works from '../../lib/projects';
 
 const WorksModal = ({ work, toggleOpen, ...props }) => {
+  const [selectedWork, setSelectedWork] = useState(works.indexOf(work));
+  const {
+    title,
+    imgs,
+    company,
+    role,
+    year,
+    longDesc,
+    liveURL,
+    sourceURL,
+    tags,
+  } = works[selectedWork];
+
+  const [disableLeft, setDisableLeft] = useState(false);
+  const [disableRight, setDisableRight] = useState(false);
+
+  useEffect(() => {
+    if (selectedWork < 1) {
+      setDisableLeft(true);
+    } else {
+      setDisableLeft(false);
+    }
+    if (selectedWork > works.length - 2) {
+      setDisableRight(true);
+    } else {
+      setDisableRight(false);
+    }
+  }, [selectedWork]);
+
+  const handlePrev = () => {
+    setSelectedWork((prev) => prev - 1);
+  };
+
+  const handleNext = () => {
+    setSelectedWork((prev) => prev + 1);
+  };
+
   return (
     <Box position='fixed' inset={0} {...props}>
       <VStack
@@ -31,8 +69,24 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
           {/* Controles */}
           <HStack w='full' justify='space-between' mb={8}>
             <HStack spacing={4}>
-              <Icon as={VscChevronLeft} fontSize='2xl' />
-              <Icon as={VscChevronRight} fontSize='2xl' />
+              <button type='button' onClick={handlePrev} disabled={disableLeft}>
+                <Icon
+                  as={VscChevronLeft}
+                  fontSize='2xl'
+                  opacity={disableLeft ? 0.4 : 1}
+                />
+              </button>
+              <button
+                type='button'
+                onClick={handleNext}
+                disabled={disableRight}
+              >
+                <Icon
+                  as={VscChevronRight}
+                  fontSize='2xl'
+                  opacity={disableRight ? 0.4 : 1}
+                />
+              </button>
             </HStack>
             <ToggleMenu
               open={open}
@@ -52,8 +106,8 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
             >
               <Box h='full' w='full'>
                 <Image
-                  src={`/images/projects/desktop/${work.imgs[0]}`}
-                  alt={work.title}
+                  src={`/images/projects/desktop/${imgs[0]}`}
+                  alt={title}
                   quality='100'
                   layout='fill'
                   objectFit='cover'
@@ -67,11 +121,11 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
               fontSize={{ base: '3xl', md: '4xl' }}
               order={{ md: -1 }}
             >
-              {work.title}
+              {title}
             </Text>
             <HStack alignItems='baseline' order={{ md: -1 }} mb={[2, 2, 3]}>
               <Text fontWeight='light' fontSize={{ base: 'lg', md: 'xl' }}>
-                {work.company}
+                {company}
               </Text>{' '}
               <Box
                 position='relative'
@@ -82,7 +136,7 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
                 rounded='full'
               />
               <Text fontWeight='light' fontSize={{ md: 'lg' }}>
-                {work.role}
+                {role}
               </Text>{' '}
               <Box
                 position='relative'
@@ -93,15 +147,15 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
                 rounded='full'
               />
               <Text fontWeight='light' fontSize={{ md: 'lg' }}>
-                {work.year}
+                {year}
               </Text>
             </HStack>
             <Text fontWeight='light' fontSize={{ md: 'lg' }} mb={[4, 4, 5]}>
-              {work.longDesc}
+              {longDesc}
             </Text>
             <Flex wrap='wrap' mb={[2, 2, 3]}>
-              {work &&
-                work.tags.map((tag) => (
+              {tags &&
+                tags.map((tag) => (
                   <Text
                     fontWeight='light'
                     fontSize={{ base: 'sm', md: 'md' }}
@@ -123,7 +177,7 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
                 py={3}
                 text='Live'
                 as='a'
-                href={work.liveURL}
+                href={liveURL}
                 target='_blank'
                 rel='noopener noreferrer'
                 icon={RiExternalLinkLine}
@@ -136,7 +190,7 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
                 py={3}
                 text='GitHub'
                 as='a'
-                href={work.sourceURL}
+                href={sourceURL}
                 target='_blank'
                 rel='noopener noreferrer'
                 icon={RiGithubLine}
