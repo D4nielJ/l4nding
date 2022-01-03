@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import { Box, Flex, Link, VStack } from '@chakra-ui/react';
-import { AnimatePresence, useCycle } from 'framer-motion';
+import { AnimatePresence, useCycle, motion } from 'framer-motion';
 
 import { Logo, Backdrop, Icons } from '../shared';
 import ToggleMenu from './Toggle.js';
@@ -8,6 +8,13 @@ import NavHeader from './NavHeader.js';
 import NavLinks from './NavLinks.js';
 import { controlBodyFlow } from '../utils';
 import { useEffect, useState } from 'react';
+
+const MotionFlex = motion(Flex);
+
+const navbarVariants = {
+  hide: { y: -70 },
+  visible: { y: 0 },
+};
 
 const Navbar = () => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -25,27 +32,34 @@ const Navbar = () => {
     controlBodyFlow(open);
   }, [open]);
 
-  const [prevPosY, setPrevPosY] = useState(0);
-  const [upOrDown, setUpOrDown] = useState(0);
+  const [position, setPosition] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [hide, setHide] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const prev = prevPosY;
+      const prev = position;
       const actual = window.pageYOffset;
-      setUpOrDown(actual - prev);
-      setPrevPosY(actual);
+      setDirection(actual - prev);
+      setPosition(actual);
     };
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevPosY]);
+  }, [position]);
 
-  console.log(upOrDown);
+  useEffect(() => {
+    if (position > 100 && direction > 0) {
+      setHide(true);
+    } else {
+      setHide(false);
+    }
+  }, [direction, position]);
 
   return (
-    <Flex
+    <MotionFlex
       bg='black.900'
       dropShadow='2xl'
       position='fixed'
@@ -53,6 +67,8 @@ const Navbar = () => {
       left={0}
       right={0}
       zIndex='3'
+      variants={navbarVariants}
+      animate={hide ? 'hide' : 'visible'}
     >
       <Flex
         w='full'
@@ -134,7 +150,7 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </Flex>
-    </Flex>
+    </MotionFlex>
   );
 };
 
