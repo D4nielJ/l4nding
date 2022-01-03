@@ -55,7 +55,7 @@ const l4nding = () => {
             direction={{ base: 'column', md: 'row' }}
             justify={{ base: 'flex-start', md: 'space-between' }}
           >
-            <ButtonLink href='https://d4nielj.netlify.app/' isExternal>
+            <ButtonLink href='/#home' isExternal>
               Website
             </ButtonLink>
             <ButtonLink href='https://github.com/d4nielj' isExternal>
