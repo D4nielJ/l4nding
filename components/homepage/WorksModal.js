@@ -25,7 +25,6 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
         bg='black'
         color='white'
         py={8}
-        px={{ base: 8, md: 32 }}
         mx='auto'
       >
         <Box maxW='container.xl' px={{ base: 8, md: 20 }}>
@@ -48,7 +47,6 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
             <AspectRatio
               w='full'
               ratio={{ base: 4 / 3, md: 5 / 3 }}
-              onClick={toggleOpen}
               mb={[4, 4, 6]}
               mr={[0, 0, 10]}
             >
@@ -67,7 +65,6 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
             <Text
               fontWeight='light'
               fontSize={{ base: '3xl', md: '4xl' }}
-              onClick={toggleOpen}
               order={{ md: -1 }}
             >
               {work.title}
