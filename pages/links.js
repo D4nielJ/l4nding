@@ -56,7 +56,7 @@ const l4nding = () => {
             justify={{ base: 'flex-start', md: 'space-between' }}
           >
             <ButtonLink href='/#home' isExternal>
-              Website
+              Portfolio
             </ButtonLink>
             <ButtonLink href='https://github.com/d4nielj' isExternal>
               GitHub
@@ -66,7 +66,7 @@ const l4nding = () => {
               <Icon ml={1} as={RiDownloadLine} />
             </ButtonLink>
           </Stack>
-          <Icons justify='center' spacing={[4, 4, 16]} />
+          <Icons justify='center' spacing={[4, 4, 16]} noGitHub />
         </VStack>
       </VStack>
     </LandLayout>
