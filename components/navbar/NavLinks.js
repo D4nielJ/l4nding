@@ -5,7 +5,7 @@ const links = [
   {
     id: 'home',
     name: 'Home',
-    address: '#',
+    address: '#home',
     enable: true,
   },
   {

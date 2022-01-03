@@ -9,6 +9,7 @@ const l4nding = () => {
     <Layout>
       <Flex
         as='section'
+        id='home'
         direction={['column', 'column', 'row-reverse']}
         align='center'
         py={[28, 28, 40]}
@@ -44,7 +45,7 @@ const l4nding = () => {
           >
             We can build awesome stuff, together.
           </Text>
-          <SquareButton as='a' href='/contact' text="Let's work" withBall />
+          <SquareButton as='a' href='#contact' text="Let's work" withBall />
         </Flex>
       </Flex>
       <About />

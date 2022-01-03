@@ -79,7 +79,7 @@ const Navbar = () => {
         px={{ base: 8, md: 20 }}
         justifyContent='space-between'
       >
-        <NextLink href='/'>
+        <NextLink href='/#home'>
           <a>
             <Logo />
           </a>
