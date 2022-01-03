@@ -21,16 +21,6 @@ const Layout = ({ children }) => {
         <meta property='og:type' content='website' />
         <meta property='og:title' content="D4nielj's web" />
         <title>D4nielJ&apos;s web</title>
-        {/*   <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script
-          async
-          src='https://www.googletagmanager.com/gtag/js?id=G-F7QVFZTH3R'
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-F7QVFZTH3R');
-        </script>
       </Head>
       <Box minH='100vh' display='flex' flexDir='column'>
         <Box flexGrow='1'>

@@ -35,7 +35,7 @@ const Work = ({ work, last, ...props }) => {
           fontSize='xl'
           mb={2}
           cursor='pointer'
-          _onHover={{ textDecor: 'underline' }}
+          _hover={{ textDecor: 'underline' }}
           onClick={toggleOpen}
         >
           {work.title}
