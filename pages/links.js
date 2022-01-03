@@ -66,7 +66,7 @@ const l4nding = () => {
               <Icon ml={1} as={RiDownloadLine} />
             </ButtonLink>
           </Stack>
-          <Icons justify='center' spacing={[4, 4, 16]} noGitHub />
+          <Icons justify='center' spacing={[4, 4, 16]} withMail noGitHub />
         </VStack>
       </VStack>
     </LandLayout>

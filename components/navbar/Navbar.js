@@ -50,8 +50,6 @@ const Navbar = () => {
     };
   }, [position]);
 
-  console.log(direction, position);
-
   useEffect(() => {
     if (position > 100 && direction > 3) {
       setHide(true);
