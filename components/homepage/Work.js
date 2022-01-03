@@ -34,6 +34,8 @@ const Work = ({ work, last, ...props }) => {
           fontWeight='light'
           fontSize='xl'
           mb={2}
+          cursor='pointer'
+          _onHover={{ textDecor: 'underline' }}
           onClick={toggleOpen}
         >
           {work.title}
@@ -42,6 +44,7 @@ const Work = ({ work, last, ...props }) => {
           w='full'
           ratio={4 / 3}
           onClick={toggleOpen}
+          cursor='pointer'
           mb={[4, 4, 6]}
           mr={[0, 0, 10]}
         >
@@ -57,10 +60,12 @@ const Work = ({ work, last, ...props }) => {
         </AspectRatio>
         <Flex direction='column' alignItems='flex-start'>
           <Text
-            display={{ base: 'none', md: 'block' }}
+            display={{ base: 'none', md: 'inline-block' }}
             fontWeight='light'
             fontSize='4xl'
             onClick={toggleOpen}
+            cursor='pointer'
+            _hover={{ textDecor: 'underline' }}
           >
             {work.title}
           </Text>
