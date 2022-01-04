@@ -47,6 +47,7 @@ const Work = ({ work, last, ...props }) => {
           cursor='pointer'
           mb={[4, 4, 6]}
           mr={[0, 0, 10]}
+          flex="0 0 50%"
         >
           <Box w='full' h='full'>
             <Image
