@@ -14,6 +14,7 @@ const Icons = ({
   spacing,
   iconSize,
   withMail = false,
+  noGitHub = false,
   ...props
 }) => {
   return (
@@ -36,11 +37,13 @@ const Icons = ({
         icon={RiLinkedinBoxLine}
         iconSize={iconSize}
       />
-      <IconLink
-        href='https://github.com/d4nielj'
-        icon={RiGithubLine}
-        iconSize={iconSize}
-      />
+      {!noGitHub && (
+        <IconLink
+          href='https://github.com/d4nielj'
+          icon={RiGithubLine}
+          iconSize={iconSize}
+        />
+      )}
       <IconLink
         href='https://www.twitter.com/d4niel_jm/'
         icon={RiTwitterLine}

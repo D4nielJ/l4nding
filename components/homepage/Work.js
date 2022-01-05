@@ -7,11 +7,10 @@ import {
   Divider,
   HStack,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { AnimatePresence, useCycle } from 'framer-motion';
 import { Backdrop, SquareButton } from '../shared';
 import WorksModal from './WorksModal';
-import { controlBodyFlow } from '../utils';
+import { controlBodyFlow, Image } from '../utils';
 
 const Work = ({ work, last, ...props }) => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -34,6 +33,8 @@ const Work = ({ work, last, ...props }) => {
           fontWeight='light'
           fontSize='xl'
           mb={2}
+          cursor='pointer'
+          _hover={{ textDecor: 'underline' }}
           onClick={toggleOpen}
         >
           {work.title}
@@ -42,12 +43,15 @@ const Work = ({ work, last, ...props }) => {
           w='full'
           ratio={4 / 3}
           onClick={toggleOpen}
+          cursor='pointer'
           mb={[4, 4, 6]}
           mr={[0, 0, 10]}
+          flex='0 0 50%'
         >
           <Box w='full' h='full'>
             <Image
-              src={`/images/projects/desktop/${work.imgs[0]}`}
+              src={`/images/projects/${work.id}/${work.img}`}
+              ext={work.formatImgs}
               alt={work.title}
               quality='100'
               layout='fill'
@@ -57,10 +61,12 @@ const Work = ({ work, last, ...props }) => {
         </AspectRatio>
         <Flex direction='column' alignItems='flex-start'>
           <Text
-            display={{ base: 'none', md: 'block' }}
+            display={{ base: 'none', md: 'inline-block' }}
             fontWeight='light'
             fontSize='4xl'
             onClick={toggleOpen}
+            cursor='pointer'
+            _hover={{ textDecor: 'underline' }}
           >
             {work.title}
           </Text>

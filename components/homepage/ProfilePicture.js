@@ -1,8 +1,7 @@
 import React from 'react';
 import { AspectRatio, Box, Flex } from '@chakra-ui/react';
-import { Image, MotionBox } from '../utils';
-import photo from '../../public/images/photo.jpg';
-import photoBG from '../../public/images/photo-bg.jpg';
+import { MotionBox, Image } from '../utils';
+import NextImage from 'next/image';
 
 const ProfilePicture = ({ ...props }) => {
   return (
@@ -15,23 +14,24 @@ const ProfilePicture = ({ ...props }) => {
         transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
       >
         <AspectRatio w={[24, 24, 28]} ratio={1}>
-          <Box>
-            <Image
-              src={photoBG}
+          <Box rounded='full'>
+            <NextImage
+              src='/images/bgpp_1_desktop.jpg'
               quality='100'
               alt='Portrait of Daniel J.'
-              rounded='full'
+              layout='fill'
             />
           </Box>
         </AspectRatio>
       </MotionBox>
       <AspectRatio w={[48, 48, 56]} ratio={1}>
-        <Box>
+        <Box rounded='full'>
           <Image
-            src={photo}
+            src='/images/pp_1'
+            ext='png'
             quality='100'
             alt='Portrait of Daniel J.'
-            rounded='full'
+            layout='fill'
           />
         </Box>
       </AspectRatio>
