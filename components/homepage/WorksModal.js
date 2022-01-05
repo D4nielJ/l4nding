@@ -7,19 +7,21 @@ import {
   AspectRatio,
   Flex,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import ToggleMenu from '../navbar/Toggle';
 import { VscChevronLeft, VscChevronRight } from 'react-icons/vsc';
 import { RiGithubLine, RiExternalLinkLine } from 'react-icons/ri';
 import { SquareButton } from '../shared';
 import works from '../../lib/projects';
+import { Image } from '../utils';
 
 const WorksModal = ({ work, toggleOpen, ...props }) => {
   const [selectedWork, setSelectedWork] = useState(works.indexOf(work));
   const {
+    id,
     title,
-    imgs,
+    sliderImgs,
+    formatImgs,
     company,
     role,
     year,
@@ -106,7 +108,8 @@ const WorksModal = ({ work, toggleOpen, ...props }) => {
             >
               <Box h='full' w='full'>
                 <Image
-                  src={`/images/projects/desktop/${imgs[0]}`}
+                  src={`/images/projects/${id}/${sliderImgs[0]}`}
+                  ext={formatImgs}
                   alt={title}
                   quality='100'
                   layout='fill'

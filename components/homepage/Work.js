@@ -7,11 +7,10 @@ import {
   Divider,
   HStack,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { AnimatePresence, useCycle } from 'framer-motion';
 import { Backdrop, SquareButton } from '../shared';
 import WorksModal from './WorksModal';
-import { controlBodyFlow } from '../utils';
+import { controlBodyFlow, Image } from '../utils';
 
 const Work = ({ work, last, ...props }) => {
   const [open, toggleOpen] = useCycle(false, true);
@@ -47,11 +46,12 @@ const Work = ({ work, last, ...props }) => {
           cursor='pointer'
           mb={[4, 4, 6]}
           mr={[0, 0, 10]}
-          flex="0 0 50%"
+          flex='0 0 50%'
         >
           <Box w='full' h='full'>
             <Image
-              src={`/images/projects/desktop/${work.imgs[0]}`}
+              src={`/images/projects/${work.id}/${work.img}`}
+              ext={work.formatImgs}
               alt={work.title}
               quality='100'
               layout='fill'

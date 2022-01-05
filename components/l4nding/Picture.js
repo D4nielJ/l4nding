@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/react';
-import { Image, MotionBox } from '../utils';
+import { MotionBox } from '../utils';
+import Image from 'next/image';
 
 import profilePicture from '../../public/images/profile_l4nding.jpg';
 import bgPicture from '../../public/images/bg_l4nding.jpg';
