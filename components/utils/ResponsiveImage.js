@@ -7,16 +7,15 @@ const ResponsiveImage = ({ src, ext = 'jpg', alt, ...props }) => {
   const [responsive, setResponsive] = useState(undefined);
 
   useEffect(() => {
-    if (windowWidth > '768') {
+    console.log(windowWidth);
+    if (windowWidth > '767') {
       setResponsive('desktop');
     } else {
       setResponsive('mobile');
     }
   }, [windowWidth]);
 
-  return (
-    <Image src={`${src}_${responsive}.${ext}`} alt={alt} {...props} />
-  );
+  return <Image src={`${src}_${responsive}.${ext}`} alt={alt} {...props} />;
 };
 
 export default ResponsiveImage;
