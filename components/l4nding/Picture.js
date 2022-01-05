@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, AspectRatio } from '@chakra-ui/react';
 import { MotionBox } from '../utils';
 import Image from 'next/image';
 
@@ -7,7 +7,7 @@ import bgPicture from '../../public/images/bg_l4nding.jpg';
 
 const Picture = () => {
   return (
-    <Box position='relative'>
+    <Box minW='159px' w='full' h='full' position='relative'>
       <MotionBox
         position='absolute'
         top='0'
@@ -18,25 +18,30 @@ const Picture = () => {
         animate={{ rotate: -6 }}
         transition={{ yoyo: Infinity, duration: 1.5, ease: 'easeInOut' }}
       >
-        <Image
-          src={bgPicture}
-          alt='Daniel Jaramillo'
-          width='159px'
-          height='212px'
-          quality='100'
-          rounded='lg'
-          placeholder='blur'
-        />
+        <AspectRatio w='full' ratio={3 / 4}>
+          <Box w='full' h='full' rounded='lg'>
+            <Image
+              src={bgPicture}
+              alt='Daniel Jaramillo'
+              layout='fill'
+              quality='100'
+              rounded='lg'
+              placeholder='blur'
+            />
+          </Box>
+        </AspectRatio>
       </MotionBox>
-      <Image
-        src={profilePicture}
-        alt='Daniel Jaramillo'
-        width='159px'
-        height='212px'
-        quality='100'
-        rounded='lg'
-        placeholder='blur'
-      />
+      <AspectRatio w='full' ratio={3 / 4}>
+        <Box w='full' h='full' rounded='lg'>
+          <Image
+            src={profilePicture}
+            alt='Daniel Jaramillo'
+            layout='fill'
+            quality='100'
+            placeholder='blur'
+          />
+        </Box>
+      </AspectRatio>
     </Box>
   );
 };

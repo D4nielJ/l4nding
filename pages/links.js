@@ -22,7 +22,7 @@ const l4nding = () => {
           textAlign={{ base: 'center', md: 'left' }}
           alignItems={{ base: 'initial', md: 'center' }}
         >
-          <Box position='relative' top={{ base: 0, md: 8 }}>
+          <Box w='full' position='relative' top={{ base: 0, md: 8 }}>
             <Heading
               as='h1'
               fontSize={{ base: 'xl', md: '3xl' }}
