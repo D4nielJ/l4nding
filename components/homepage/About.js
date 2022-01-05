@@ -1,7 +1,6 @@
 import { Box, Text, Divider, AspectRatio } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-import MedellinPhoto from '../../public/images/medellin/6.jpg';
 
 const About = () => {
   return (
@@ -21,7 +20,7 @@ const About = () => {
       <AspectRatio w='full' ratio={{ base: 3 / 4, md: 21 / 6 }} mb={6}>
         <Box w='full' h='full'>
           <Image
-            src={MedellinPhoto}
+            src='/public/images/about_1_desktop.jpg'
             alt='Popular neighborhood in Medellín'
             quality='100'
             layout='fill'
