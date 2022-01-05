@@ -21,6 +21,7 @@ const About = () => {
         <Box w='full' h='full'>
           <Image
             src='/images/about/about_1'
+            ext='png'
             alt='Popular neighborhood in Medellín'
             quality='100'
             layout='fill'

@@ -28,6 +28,7 @@ const ProfilePicture = ({ ...props }) => {
         <Box rounded='full'>
           <Image
             src='/images/pp_1'
+            ext='png'
             quality='100'
             alt='Portrait of Daniel J.'
             layout='fill'
