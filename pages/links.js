@@ -61,7 +61,7 @@ const l4nding = () => {
             <ButtonLink href='https://github.com/d4nielj' isExternal>
               GitHub
             </ButtonLink>
-            <ButtonLink href='../public/cv/d4nielj-cv.pdf' download>
+            <ButtonLink href='/cv/d4nielj-cv.pdf' download>
               Resume
               <Icon ml={1} as={RiDownloadLine} />
             </ButtonLink>
