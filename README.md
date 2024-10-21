@@ -1,4 +1,5 @@
 # [D4nielJ's Landing Page](https://l4nding.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/74903b60-44fe-453b-8439-4b5afcf0b4c3/deploy-status)](https://app.netlify.com/sites/l4nding/deploys)
 
 ## Stack
@@ -20,3 +21,7 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
+
+## Contact
+
+email: d4niel.djm@gmail.com
